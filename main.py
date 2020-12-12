@@ -3,6 +3,7 @@ game_field = list(range(1, 10))
 
 
 def draw_game_field():
+    """Drawing a game field"""
     print("-" * 13)
     for i in range(3):
         print("", "|", game_field[0 + i * 3], "|", game_field[1 + i * 3], "|", game_field[2 + i * 3])
@@ -10,6 +11,7 @@ def draw_game_field():
 
 
 def player_input(game_label):
+    """Input player move"""
     value = False
     while not value:
         player_answer = input("What`s your move " + game_label + "?")
@@ -29,6 +31,7 @@ def player_input(game_label):
 
 
 def check_win():
+    """Checking win coord"""
     win_coord = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6))
     for each in win_coord:
         if game_field[each[0]] == game_field[each[1]] == game_field[each[2]]:
@@ -37,6 +40,7 @@ def check_win():
 
 
 def mainloop():
+    """Game loop"""
     counter = 0
     while True:
         draw_game_field()
